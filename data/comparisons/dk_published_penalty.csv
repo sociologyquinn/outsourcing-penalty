@@ -1,0 +1,59 @@
+occ,table,row,label,term,estimate,se,n,r2
+Janitors,3a,1,Baseline,outsourced,-0.045,0.005,33222,0.44
+Janitors,3a,1,Baseline,union,0.298,0.007,33222,0.44
+Janitors,3a,1,Baseline,parttime,-0.173,0.005,33222,0.44
+Janitors,3a,2,Baseline (Female),outsourced,-0.049,0.006,22760,0.46
+Janitors,3a,2,Baseline (Female),union,0.298,0.008,22760,0.46
+Janitors,3a,2,Baseline (Female),parttime,-0.21,0.007,22760,0.46
+Janitors,3a,3,Baseline (Male),outsourced,-0.041,0.007,10462,0.46
+Janitors,3a,3,Baseline (Male),union,0.286,0.011,10462,0.46
+Janitors,3a,3,Baseline (Male),parttime,-0.117,0.007,10462,0.46
+Janitors,3a,4,Baseline with Interactions,outsourced,-0.065,0.006,33222,0.45
+Janitors,3a,4,Baseline with Interactions,union,0.301,0.007,33222,0.45
+Janitors,3a,4,Baseline with Interactions,parttime,-0.19,0.005,33222,0.45
+Janitors,3a,4,Baseline with Interactions,union_x_outsourced,-0.037,0.018,33222,0.45
+Janitors,3a,4,Baseline with Interactions,parttime_x_outsourced,0.073,0.009,33222,0.45
+Janitors,3a,5,Underlying Industry Controls,outsourced,-0.052,0.006,33222,0.46
+Janitors,3a,5,Underlying Industry Controls,union,0.272,0.009,33222,0.46
+Janitors,3a,5,Underlying Industry Controls,parttime,-0.16,0.006,33222,0.46
+Janitors,3a,6,Inter Occupational Differencing,outsourced,-0.04,0.020,268083,0.45
+Janitors,3a,6,Inter Occupational Differencing,union,0.253,0.003,268083,0.45
+Janitors,3a,6,Inter Occupational Differencing,parttime,-0.186,0.002,268083,0.45
+Janitors,3a,7,Within Occupation Switchers,outsourced,-0.068,0.031,3551,0.27
+Janitors,3a,7,Within Occupation Switchers,union,0.09,0.020,3551,0.27
+Janitors,3a,7,Within Occupation Switchers,parttime,-0.125,0.025,3551,0.27
+Janitors,3a,8,Within Occupation Switchers with Demog Controls,outsourced,-0.065,0.031,3549,0.28
+Janitors,3a,8,Within Occupation Switchers with Demog Controls,union,0.09,0.019,3549,0.28
+Janitors,3a,8,Within Occupation Switchers with Demog Controls,parttime,-0.123,0.025,3549,0.28
+Janitors,3a,9,All Switchers with Demog Controls,outsourced,-0.04,0.019,5808,0.20
+Janitors,3a,9,All Switchers with Demog Controls,union,0.104,0.018,5808,0.20
+Janitors,3a,9,All Switchers with Demog Controls,parttime,-0.108,0.016,5808,0.20
+Guards,3b,1,Baseline,outsourced,-0.202,0.007,11116,0.45
+Guards,3b,1,Baseline,union,0.206,0.011,11116,0.45
+Guards,3b,1,Baseline,parttime,-0.181,0.010,11116,0.45
+Guards,3b,2,Baseline (Female),outsourced,-0.165,0.018,1809,0.61
+Guards,3b,2,Baseline (Female),union,0.217,0.033,1809,0.61
+Guards,3b,2,Baseline (Female),parttime,-0.184,0.026,1809,0.61
+Guards,3b,3,Baseline (Male),outsourced,-0.210,0.008,9307,0.46
+Guards,3b,3,Baseline (Male),union,0.204,0.013,9307,0.46
+Guards,3b,3,Baseline (Male),parttime,-0.177,0.011,9307,0.46
+Guards,3b,4,Baseline with Interactions,outsourced,-0.213,0.008,11116,0.46
+Guards,3b,4,Baseline with Interactions,union,0.247,0.013,11116,0.46
+Guards,3b,4,Baseline with Interactions,parttime,-0.24,0.012,11116,0.46
+Guards,3b,4,Baseline with Interactions,union_x_outsourced,-0.142,0.022,11116,0.46
+Guards,3b,4,Baseline with Interactions,parttime_x_outsourced,0.142,0.017,11116,0.46
+Guards,3b,5,Underlying Industry Controls,outsourced,-0.244,0.017,11094,0.46
+Guards,3b,5,Underlying Industry Controls,union,0.175,0.013,11094,0.46
+Guards,3b,5,Underlying Industry Controls,parttime,-0.17,0.012,11094,0.46
+Guards,3b,6,Inter Occupational Differencing,outsourced,-0.151,0.016,268083,0.44
+Guards,3b,6,Inter Occupational Differencing,union,0.256,0.003,268083,0.44
+Guards,3b,6,Inter Occupational Differencing,parttime,-0.192,0.002,268083,0.44
+Guards,3b,7,Within Occupation Switchers,outsourced,-0.115,0.052,1372,0.39
+Guards,3b,7,Within Occupation Switchers,union,0.030,0.043,1372,0.39
+Guards,3b,7,Within Occupation Switchers,parttime,-0.147,0.045,1372,0.39
+Guards,3b,8,Within Occupation Switchers with Demog Controls,outsourced,-0.083,,1371,0.40
+Guards,3b,8,Within Occupation Switchers with Demog Controls,union,0.027,,1371,0.40
+Guards,3b,8,Within Occupation Switchers with Demog Controls,parttime,-0.145,,1371,0.40
+Guards,3b,9,All Switchers with Demog Controls,outsourced,-0.090,0.034,1818,0.34
+Guards,3b,9,All Switchers with Demog Controls,union,0.074,0.036,1818,0.34
+Guards,3b,9,All Switchers with Demog Controls,parttime,-0.089,0.032,1818,0.34

@@ -1,4 +1,7 @@
-data/n.venv/
+.venv/
 .ipynb_checkpoints/
 .DS_Store
-refs/
+refs/*.pdf
+data/ipums_data/
+outputs/py/*.parquet
+notebooks/junk.ipynb
