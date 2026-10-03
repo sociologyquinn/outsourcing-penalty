@@ -5,7 +5,7 @@ and `refs/kq_spec.md`.
 
 ## Source
 - IPUMS CPS extract: `data/ipums_data/cps_00047.xml` (codebook),
-  `data/ipums_data/dk_core.parquet` (microdata).
+  `data/ipums_data/dk_core.parquet` (microdata, includes HOURWAGE2).
 
 ## Base sample
 - OCC1990 in {453 janitors, 426 guards}. Apply this filter in 01_clean
@@ -15,26 +15,42 @@ and `refs/kq_spec.md`.
 - Weight: EARNWT (nonzero only for outgoing rotation groups, MISH 4 and 8).
 
 ## Missing-value sentinels (set to NaN)
-- HOURWAGE: 999.99
-- EARNWEEK2: 999999.99
+- HOURWAGE2: 0, 999.99
+- EARNWEEK2: 0, 999999.99
+  (0 is treated as missing: a wage/salary worker reporting current
+  earnings cannot have a true wage of 0.)
 - UHRSWORKORG: 0, 998 (hours vary), 999 (NIU)
-- UHRSWORK1: 997 (hours vary), 999 (NIU)
+- UHRSWORK1: 0, 997 (hours vary), 999 (NIU)
+  (0 usual hours carries no information about hours worked.)
+- HOURWAGE: not used; HOURWAGE2 replaces it for all years.
 
 ## Wages
-- hours = UHRSWORKORG; if NaN, UHRSWORK1. Fallback to UHRSWORK1 is a
-  replication choice, not from D&K.
+- hours = UHRSWORKORG; if NaN, UHRSWORK1. Fallback to UHRSWORK1 is an
+  analytic choice (not from D&K) to reduce missing hours.
 - hourly_wage:
-  - PAIDHOUR == 2 and HOURWAGE non-missing: HOURWAGE
+  - PAIDHOUR == 2 and HOURWAGE2 non-missing: HOURWAGE2
   - otherwise, EARNWEEK2 non-missing and hours > 0: EARNWEEK2 / hours
-    (includes paid-hourly workers with missing HOURWAGE)
+    (includes paid-hourly workers with missing HOURWAGE2)
   - else NaN
-- log_wage = log(hourly_wage), only where hourly_wage > 0.
-- Nominal dollars. No topcode adjustment, no trimming.
-  Allocated (imputed) earnings retained; D&K do not document their handling.
+  HOURWAGE2 is used for all years: HOURWAGE is not populated from
+  April 2023 onward, and HOURWAGE2 applies the post-2023 Census rounding
+  and topcoding to all years, so hourly wages are comparable over time.
+- log_wage_untrimmed = log(hourly_wage), only where hourly_wage > 0.
+- Nominal dollars. No topcode adjustment beyond HOURWAGE2's harmonized
+  topcoding. Allocated (imputed) earnings retained; D&K do not document
+  their handling.
 - real_wage = hourly_wage * (CPI_2025 / CPI_YEAR), using annual average
   CPI-U-RS from `data/cpi_annual.csv` (columns YEAR, AVG). 2025 dollars.
-  Used for summary statistics only. Regressions use nominal log_wage;
-  deflating by annual CPI is absorbed by STATEFIP^YEAR FE.
+- Trim: wage_trimmed = 1 if hourly_wage < 0.5 x federal minimum in that
+  year (STTMINWGFG, `data/minimumwage_annual.csv`) or real_wage > 100.
+  Janitors and guards are FLSA-covered; values outside this range are
+  treated as measurement error. Rows are kept; incidence does not use wages.
+  - log_wage: log_wage_untrimmed, NaN where wage_trimmed. Used in all
+    regressions. Deflating by annual CPI is absorbed by STATEFIP^YEAR FE,
+    so regressions use nominal wages.
+  - log_wage_untrimmed: robustness only.
+  - real_wage_trimmed: real_wage, NaN where wage_trimmed. Used in
+    summary statistics.
 
 ## Outsourcing
 - outsourced = 1 if (OCC1990 == 453 and IND1990 == 722)
@@ -42,8 +58,9 @@ and `refs/kq_spec.md`.
 
 ## Covariates
 - union = 1 if UNION in {2, 3} (member or covered); 0 if UNION == 1; NaN if 0.
-- parttime = 1 if UHRSWORK1 < 30; 0 if >= 30; NaN if missing.
-  Check: report the count of UHRSWORK1 == 0. If nonzero, stop and ask.
+- parttime = 1 if hours < 35; 0 if hours >= 35; NaN if hours is NaN.
+  Uses the combined hours variable (same as the wage denominator).
+  Threshold follows the BLS definition of part-time work.
 - age = AGE; age2 = AGE^2.
 - female = 1 if SEX == 2 (male = reference).
 - hispanic = 1 if HISPAN in 100-612; 0 if HISPAN == 0; NaN if 901/902.
@@ -67,6 +84,7 @@ and `refs/kq_spec.md`.
   NaN otherwise. Used in kq spec only.
 - union_x_outsourced = union * outsourced;
   parttime_x_outsourced = parttime * outsourced (D&K row 4 only).
+- occupation = "janitor" if OCC1990 == 453; "guard" if 426 (label only).
 
 ## Clustering and FE identifiers
 - ym = YEAR * 100 + MONTH (survey month; cluster variable).
@@ -77,13 +95,11 @@ and `refs/kq_spec.md`.
   effectively restricts to ORG respondents. Report N as count of
   EARNWT > 0 rows.
 - Regression: base sample with non-missing log_wage and every covariate
-  in the given spec. kq drops more rows than dk (gov_employee NaN).
-- For dk vs kq comparisons, also estimate dk on the kq sample, so
-  differences reflect covariates rather than sample.
+  in the given spec. dk and kq use the same rows (gov_employee has no NaNs).
 - replication_sample: YEAR 1983-2000.
 - extension_sample: YEAR >= 2001.
 
 ## Output
-- 01_clean writes `outputs/py/dk_clean.parquet`: all base-sample rows,
+- 01_clean writes `outputs/py/dk_clean_v2.parquet`: all base-sample rows,
   all constructed variables. Downstream notebooks load this file and
   do not re-clean.

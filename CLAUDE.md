@@ -34,12 +34,19 @@ one row per term: lang, spec, model, occ, sample, term, estimate, se, t, p, n_ob
 - spec: dk, kq, or dk_kqsample (dk estimated on the kq sample)
 - model: base or nounion
 
-## Reference files in data/
-See `data/README_manifest.csv`. The `role` column governs use:
-- input: source data. Read via code only; never load into the conversation.
-- benchmark: D&K published values. Compare to these; never invent others.
-- crosscheck: legacy R output expected to match Python closely.
-- legacy: old R spec and cleaning. Reference only.
+## Data layout
+- data/ipums_data/: IPUMS codebook and microdata. Read via code only;
+  never load contents into the conversation.
+- data/comparisons/: D&K benchmarks and legacy R outputs. Small CSVs;
+  may be read directly.
+- data/cpi_annual.csv, data/minimumwage_annual.csv: small inputs;
+  may be read directly.
+- data/README_manifest.csv: what each file is. The `role` column governs use:
+  - input: source data.
+  - benchmark: D&K published values. Compare to these; never invent others.
+  - crosscheck: legacy R output expected to match Python closely.
+  - legacy: old R spec and cleaning. Reference only.
+- Never modify anything in data/. Listing files is fine.
 
 ## Robustness checks (planned)
 - Complete cases on urbanicity (defined in `refs/dk_spec.md`; expect a somewhat smaller penalty)
