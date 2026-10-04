@@ -1,0 +1,44 @@
+\begin{table}[!t]
+\caption*{
+{\large Table 2: Workforce characteristics, Guards, 2001-2025} \\
+{\small Contractor = outsourced; In-house = directly employed}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rrrrrrrrrr}
+\toprule
+  & \multicolumn{2}{c}{2001-2005} & \multicolumn{2}{c}{2006-2010} & \multicolumn{2}{c}{2011-2015} & \multicolumn{2}{c}{2016-2019} & \multicolumn{2}{c}{2021-2025} \\ 
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+  & In-house & Contractor & In-house & Contractor & In-house & Contractor & In-house & Contractor & In-house & Contractor \\ 
+\midrule\addlinespace[2.5pt]
+\multicolumn{11}{l}{Employment and wages} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Mean hourly wage (2025\$) & \$22.36 & \$19.24 & \$22.83 & \$19.06 & \$23.16 & \$18.42 & \$23.75 & \$19.81 & \$23.61 & \$21.05 \\
+Unionization rate & 17.5\% & 8.3\% & 15.3\% & 9.1\% & 17.7\% & 8.5\% & 19.4\% & 10.9\% & 17.8\% & 8.6\% \\
+Part-time rate & 18.5\% & 17.0\% & 17.5\% & 16.7\% & 19.2\% & 21.7\% & 17.4\% & 18.1\% & 16.1\% & 19.8\% \\
+\midrule\addlinespace[2.5pt]
+\multicolumn{11}{l}{Demographics} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Mean age & 41.4 & 41.3 & 42.0 & 41.3 & 42.4 & 41.3 & 42.4 & 40.8 & 43.2 & 41.0 \\
+Female & 24.0\% & 23.0\% & 22.9\% & 22.5\% & 21.8\% & 20.7\% & 22.7\% & 23.3\% & 26.2\% & 25.7\% \\
+Black & 24.3\% & 32.7\% & 23.5\% & 33.7\% & 22.7\% & 31.9\% & 24.6\% & 34.8\% & 25.5\% & 40.1\% \\
+Hispanic & 13.4\% & 12.1\% & 13.2\% & 15.0\% & 16.9\% & 17.4\% & 17.6\% & 17.3\% & 19.2\% & 18.7\% \\
+\midrule\addlinespace[2.5pt]
+\multicolumn{11}{l}{Education} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Less than high school & 9.3\% & 12.6\% & 5.0\% & 8.9\% & 4.7\% & 7.0\% & 3.4\% & 5.8\% & 3.7\% & 5.1\% \\
+High school / GED & 38.6\% & 44.9\% & 35.0\% & 45.0\% & 33.2\% & 39.9\% & 31.0\% & 38.0\% & 35.6\% & 45.0\% \\
+Some college & 36.0\% & 32.3\% & 41.1\% & 36.0\% & 40.7\% & 39.7\% & 42.1\% & 42.4\% & 38.6\% & 34.9\% \\
+Bachelor's or higher & 16.1\% & 10.3\% & 18.8\% & 10.0\% & 21.3\% & 13.4\% & 23.5\% & 13.8\% & 22.1\% & 15.0\% \\
+\midrule\addlinespace[2.5pt]
+\multicolumn{11}{l}{Sample} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Unweighted N (regression sample) & 2,911 & 2,515 & 2,964 & 2,569 & 2,937 & 2,479 & 2,236 & 1,837 & 1,931 & 1,767 \\
+Workers represented (thousands) & 417 & 387 & 467 & 429 & 483 & 440 & 509 & 459 & 460 & 476 \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+Data: IPUMS CPS ORG (outputs/py/dk\_clean\_v2.parquet). Years: 2001-2025, 2020 excluded. Weights: EARNWT. Statistics use the kq regression sample (non-missing log\_wage and every kq covariate); unweighted N counts those rows. Workers represented is average monthly employment estimated from EARNWT on all sampled base-sample workers, including those excluded for missing wages or covariates: sum(EARNWT) divided by the number of distinct survey months (ym) for that occupation in the period, in thousands, rounded to the nearest thousand. FE: state x year and clustering by survey month (ym) apply to regression tables only; Tables 1-2 are descriptive. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed.\\
+\end{minipage}
+\end{table}

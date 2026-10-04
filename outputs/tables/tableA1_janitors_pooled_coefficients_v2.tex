@@ -1,0 +1,39 @@
+\begin{table}[!t]
+\caption*{
+{\large Table A1: Pooled wage regression coefficients, Janitors} \\
+{\small Dependent variable: log hourly wage. Coefficients with SE in parentheses}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|llrr}
+\toprule
+  & \multicolumn{2}{c}{dk spec} & \multicolumn{2}{c}{kq spec (dk + gov\_employee)} \\ 
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+  & 1983-2000 & 2001-2025 & 1983-2000 & 2001-2025 \\ 
+\midrule\addlinespace[2.5pt]
+Outsourced & -0.047*** (0.004) & -0.031*** (0.004) & -0.047*** (0.004) & -0.028*** (0.004) \\
+Union & 0.247*** (0.005) & 0.133*** (0.005) & 0.246*** (0.005) & 0.129*** (0.005) \\
+Part-time & -0.157*** (0.004) & -0.164*** (0.004) & -0.157*** (0.004) & -0.163*** (0.004) \\
+Education: no schooling (ref.: college) & -0.184*** (0.023) & -0.302*** (0.022) & -0.184*** (0.023) & -0.301*** (0.022) \\
+Education: primary (ref.: college) & -0.119*** (0.010) & -0.238*** (0.011) & -0.119*** (0.010) & -0.238*** (0.011) \\
+Education: some high school (ref.: college) & -0.051*** (0.011) & -0.198*** (0.011) & -0.051*** (0.011) & -0.198*** (0.011) \\
+Education: high school completion (ref.: college) & -0.003 (0.011) & -0.110*** (0.010) & -0.003 (0.011) & -0.110*** (0.010) \\
+Education: some college (ref.: college) & 0.026** (0.011) & -0.073*** (0.011) & 0.026** (0.011) & -0.073*** (0.011) \\
+Female & -0.072*** (0.004) & -0.091*** (0.004) & -0.072*** (0.004) & -0.091*** (0.004) \\
+Black & -0.099*** (0.005) & -0.096*** (0.005) & -0.100*** (0.005) & -0.096*** (0.005) \\
+Hispanic & -0.076*** (0.006) & -0.058*** (0.005) & -0.076*** (0.006) & -0.058*** (0.005) \\
+Age & 0.026*** (0.001) & 0.019*** (0.001) & 0.026*** (0.001) & 0.019*** (0.001) \\
+Age squared & -0.000*** (0.000) & -0.000*** (0.000) & -0.000*** (0.000) & -0.000*** (0.000) \\
+MSA & 0.072*** (0.005) & 0.049*** (0.005) & 0.072*** (0.005) & 0.049*** (0.005) \\
+Central city & -0.037*** (0.005) & -0.030*** (0.005) & -0.037*** (0.005) & -0.029*** (0.005) \\
+MSA, central-city status unknown & -0.056*** (0.014) & -0.043*** (0.005) & -0.056*** (0.014) & -0.043*** (0.005) \\
+Geography unidentified & 0.028*** (0.006) & 0.014 (0.018) & 0.028*** (0.006) & 0.014 (0.018) \\
+Government employee (kq only) & — & — & 0.002 (0.004) & 0.011** (0.004) \\
+Observations (N) & 57,297 & 60,356 & 57,297 & 60,356 \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+Data: outputs/py/estimates.csv (model=base, pooled samples). Years: 1983-2000 and 2001-2025 (2020 excluded). Weights: EARNWT. FE: state x year (STATEFIP\textasciicircum{}YEAR), not shown as rows. Clustering: survey month (ym), CRV1. Reference education: college. Dashes: term not in model. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed.\\
+\end{minipage}
+\end{table}

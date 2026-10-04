@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\caption*{
+{\large Table 3: D\&K pooled 1983-2000 wage penalty, replication} \\
+{\small Outsourced coefficient on log wage, dk spec, row 1}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rrrrrr}
+\toprule
+  & \multicolumn{2}{c}{This replication} & \multicolumn{2}{c}{D\&K (2010), Table 3} & \multicolumn{2}{c}{Difference (mine - D\&K)} \\ 
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+  & Coef (SE) & N & Coef (SE) & N & Diff. & p-value \\ 
+\midrule\addlinespace[2.5pt]
+Janitors & -0.047*** (0.004) & 57,297 & -0.045*** (0.005) & 33,222 & -0.002 & 0.737 \\
+Guards & -0.222*** (0.007) & 18,251 & -0.202*** (0.007) & 11,116 & -0.020 & 0.034 \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+Data: outputs/py/estimates.csv (this replication); data/comparisons/dk\_published\_penalty.csv (D\&K row 1, the only source of D\&K values). Years: 1983-2000. Weights: EARNWT (replication choice; D\&K do not state weighting). FE: state x year. Clustering: survey month (ym). Stars: * p<.10, ** p<.05, *** p<.01, two-tailed; D\&K stars computed here from the published SE. Difference test: z = (mine - D\&K) / sqrt(SE\_mine\textasciicircum{}2 + SE\_D\&K\textasciicircum{}2), two-sided normal p. The test treats the two estimates as independent, which overstates the SE of the difference since the samples overlap.\\
+\end{minipage}
+\end{table}
