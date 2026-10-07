@@ -1,0 +1,20 @@
+\begin{table}[!t]
+\caption*{
+{\large Table 5: Minimum Wage Interaction, Leads, and Trend, 2001-2025} \\
+{\small Outsourced x Log Minimum Wage; Clustered SE in Parentheses, State-Clustered SE in Brackets}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|llrr}
+\toprule
+  & Outsourced x log(MW) & Joint Test on Leads & Trend per Decade, Without log(MW) & Trend per Decade, With log(MW) \\ 
+\midrule\addlinespace[2.5pt]
+Janitors & 0.018 (0.036) [0.050] & chi2 = 1.50, p = 0.472 & +0.017*** (0.006) & +0.013 (0.013) \\
+Guards & 0.009 (0.058) [0.050] & chi2 = 0.29, p = 0.864 & +0.022*** (0.008) & +0.018 (0.019) \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+Data: CPS-ORG via IPUMS for the analysis sample; minimum-wage source: data/minimumwage\_annual.csv (FRED). From `05\_minwage.ipynb`'s interaction model (outsourced x log\_mw, FE STATEFIP\textasciicircum{}YEAR + outsourced\textasciicircum{}STATEFIP + outsourced\textasciicircum{}YEAR) and trend model (outsourced x year, centered 2001, same FE minus outsourced\textasciicircum{}YEAR), both with and without the log\_mw interaction. Leads: joint Wald test (chi2, df 2) that the log\_mw interactions at t+1 and t+2 are zero. Trend per decade = 10 x the outsourced x year coefficient. Clustering: survey month (ym); state-clustered SE in brackets for the interaction only. Stars from the ym-clustered p-value: * p<.10, ** p<.05, *** p<.01, two-tailed. Descriptive associations, not causal.\\
+\end{minipage}
+\end{table}

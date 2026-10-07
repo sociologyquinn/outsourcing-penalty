@@ -1,5 +1,5 @@
 {
   "permissions": {
-    "deny": ["Read(./data/**)"]
+    "deny": ["Read(./data/ipums_data/**)"]
   }
 }

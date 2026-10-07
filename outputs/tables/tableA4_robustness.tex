@@ -1,0 +1,57 @@
+\begin{table}[!t]
+\caption*{
+{\large Table A4: Robustness of the Outsourcing Wage Penalty} \\
+{\small Outsourced Coefficient on Log Wage; SE in Parentheses; Pooled Samples}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rlrrlr}
+\toprule
+  & \multicolumn{3}{c}{Janitors} & \multicolumn{3}{c}{Guards} \\ 
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+  & Coef &  & N & Coef &  & N \\ 
+\midrule\addlinespace[2.5pt]
+\multicolumn{7}{l}{2001-2025} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Main estimate (part-time under 30 hours) & -0.035 & *** & 60,356 & -0.097 & *** & 24,143 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Part-time under 35 hours & -0.031 & *** & 60,356 & -0.093 & *** & 24,143 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Including gov\_employee & -0.031 & *** & 60,356 & -0.067 & *** & 24,143 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Untrimmed wages & -0.035 & *** & 60,798 & -0.094 & *** & 24,278 \\
+ & (0.005) &  &  & (0.006) &  &  \\
+Unweighted & -0.039 & *** & 60,356 & -0.106 & *** & 24,143 \\
+ & (0.004) &  &  & (0.005) &  &  \\
+Complete cases on geography & -0.034 & *** & 49,252 & -0.095 & *** & 20,513 \\
+ & (0.005) &  &  & (0.006) &  &  \\
+Hourly-paid workers only & -0.038 & *** & 50,380 & -0.069 & *** & 19,595 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Excluding local government & -0.031 & *** & 50,508 & -0.097 & *** & 22,754 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+\midrule\addlinespace[2.5pt]
+\multicolumn{7}{l}{1983-2000} \\[2.5pt] 
+\midrule\addlinespace[2.5pt]
+Main estimate (part-time under 30 hours) & -0.054 & *** & 57,297 & -0.226 & *** & 18,251 \\
+ & (0.004) &  &  & (0.007) &  &  \\
+Part-time under 35 hours & -0.047 & *** & 57,297 & -0.222 & *** & 18,251 \\
+ & (0.004) &  &  & (0.007) &  &  \\
+Including gov\_employee & -0.053 & *** & 57,297 & -0.195 & *** & 18,251 \\
+ & (0.004) &  &  & (0.007) &  &  \\
+Untrimmed wages & -0.044 & *** & 57,796 & -0.222 & *** & 18,286 \\
+ & (0.005) &  &  & (0.007) &  &  \\
+Unweighted & -0.059 & *** & 57,297 & -0.227 & *** & 18,251 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Complete cases on geography & -0.051 & *** & 47,544 & -0.226 & *** & 15,368 \\
+ & (0.005) &  &  & (0.007) &  &  \\
+Hourly-paid workers only & -0.050 & *** & 46,638 & -0.202 & *** & 15,058 \\
+ & (0.004) &  &  & (0.006) &  &  \\
+Excluding local government & -0.052 & *** & 46,062 & -0.223 & *** & 17,163 \\
+ & (0.004) &  &  & (0.007) &  &  \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+Data: CPS-ORG via IPUMS. Each row is one variant of the author's wage regression (base model). Panels: 2001-2025 (Author's Extension) and 1983-2000 (Author's Replication). Part-time = usual hours under 30 in the main estimate; the 35-hour variant uses the BLS threshold. Unweighted: no EARNWT weights. Untrimmed: log wage before the trimming rule. Complete cases on geography drop METRO 0, 4, 9 and the two geography indicators. Hourly-paid: PAIDHOUR == 2. Excluding local government: CLASSWKR 28 removed. N is the regression sample after pyfixest drops singleton fixed effects. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed.\\
+\end{minipage}
+\end{table}

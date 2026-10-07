@@ -1,0 +1,3 @@
+occupation,test,estimate,se,t,p,n,interpretation
+janitor,Outsourced x log binding minimum wage,0.017727426430102534,0.035664019903594156,0.4970675341148516,0.6195233156627638,60356,A positive estimate is consistent with a narrower penalty at higher minimum wages.
+guard,Outsourced x log binding minimum wage,0.008613357921669403,0.05782425337601347,0.14895752938925758,0.8816921229986581,24143,A positive estimate is consistent with a narrower penalty at higher minimum wages.

@@ -1,7 +1,7 @@
 \begin{table}[!t]
 \caption*{
-{\large Table 1: Workforce characteristics, Janitors, 2001-2025} \\
-{\small Contractor = outsourced; In-house = directly employed}
+{\large Table 1: Workforce Characteristics, Janitors, 2001-2025} \\
+{\small Contractor = Outsourced; In-House = Directly Employed}
 } 
 
 \fontsize{10.0pt}{12.0pt}\selectfont
@@ -16,7 +16,8 @@
 \midrule\addlinespace[2.5pt]
 Mean hourly wage (2025\$) & \$18.58 & \$16.04 & \$18.80 & \$16.51 & \$18.69 & \$16.26 & \$19.32 & \$17.70 & \$20.26 & \$18.49 \\
 Unionization rate & 20.8\% & 10.7\% & 20.5\% & 9.6\% & 18.4\% & 8.9\% & 16.9\% & 8.4\% & 16.4\% & 9.7\% \\
-Part-time rate & 24.0\% & 35.2\% & 23.2\% & 35.8\% & 25.5\% & 36.1\% & 24.6\% & 33.3\% & 23.9\% & 30.4\% \\
+Part-time rate & 20.1\% & 27.9\% & 18.9\% & 28.6\% & 20.3\% & 29.2\% & 19.7\% & 26.2\% & 19.3\% & 23.3\% \\
+Government employee & 32.7\% & 1.0\% & 33.8\% & 1.8\% & 30.2\% & 1.8\% & 28.5\% & 1.5\% & 31.0\% & 1.5\% \\
 \midrule\addlinespace[2.5pt]
 \multicolumn{11}{l}{Demographics} \\[2.5pt] 
 \midrule\addlinespace[2.5pt]
@@ -39,6 +40,6 @@ Workers represented (thousands) & 1,625 & 403 & 1,601 & 410 & 1,639 & 484 & 1,64
 \bottomrule
 \end{tabular*}
 \begin{minipage}{\linewidth}
-Data: IPUMS CPS ORG (outputs/py/dk\_clean\_v2.parquet). Years: 2001-2025, 2020 excluded. Weights: EARNWT. Statistics use the kq regression sample (non-missing log\_wage and every kq covariate); unweighted N counts those rows. Workers represented is average monthly employment estimated from EARNWT on all sampled base-sample workers, including those excluded for missing wages or covariates: sum(EARNWT) divided by the number of distinct survey months (ym) for that occupation in the period, in thousands, rounded to the nearest thousand. FE: state x year and clustering by survey month (ym) apply to regression tables only; Tables 1-2 are descriptive. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed.\\
+Data: CPS-ORG via IPUMS. Years: 2001-2025, 2020 excluded. Part-time = usual hours under 30. Weights: EARNWT. Statistics use the author's regression sample (non-missing log\_wage and every model covariate); N = observations with non-missing wages and all model covariates. Workers represented is average monthly employment estimated from EARNWT on all sampled base-sample workers, including those excluded for missing wages or covariates: sum(EARNWT) divided by the number of distinct survey months (ym) for that occupation in the period, in thousands, rounded to the nearest thousand. FE: state x year and clustering by survey month (ym) apply to regression tables only; Tables 1-2 are descriptive. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed.\\
 \end{minipage}
 \end{table}

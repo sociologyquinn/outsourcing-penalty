@@ -1,0 +1,53 @@
+\begin{table}[!t]
+\caption*{
+{\large Table A2: Pooled Wage Regression Coefficients, Guards} \\
+{\small Dependent Variable: Log Hourly Wage. Coefficients With SE in Parentheses}
+} 
+
+\fontsize{10.0pt}{12.0pt}\selectfont
+
+\centering\begin{tabular}{l|rlrl|rl}
+\toprule
+  & \multicolumn{2}{c}{D\&K, 1983-2000} & \multicolumn{2}{c}{Author's Replication} & \multicolumn{2}{c}{Author's Extension} \\ 
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+  & Coef &  & 1983-2000 &  & 2001-2025 &  \\ 
+\midrule\addlinespace[2.5pt]
+Outsourced & -0.202 & *** & -0.226 & *** & -0.097 & *** \\
+ & (0.007) &  & (0.007) &  & (0.006) &  \\
+Union & 0.206 & *** & 0.183 & *** & 0.131 & *** \\
+ & (0.011) &  & (0.010) &  & (0.010) &  \\
+Part-time & -0.181 & *** & -0.224 & *** & -0.193 & *** \\
+ & (0.010) &  & (0.010) &  & (0.009) &  \\
+Education: no schooling (ref.: college) &  &  & -0.472 & *** & -0.260 &  \\
+ &  &  & (0.081) &  & (0.166) &  \\
+Education: primary (ref.: college) &  &  & -0.332 & *** & -0.456 & *** \\
+ &  &  & (0.019) &  & (0.024) &  \\
+Education: some high school (ref.: college) &  &  & -0.230 & *** & -0.353 & *** \\
+ &  &  & (0.015) &  & (0.014) &  \\
+Education: high school completion (ref.: college) &  &  & -0.164 & *** & -0.219 & *** \\
+ &  &  & (0.015) &  & (0.011) &  \\
+Education: some college (ref.: college) &  &  & -0.119 & *** & -0.179 & *** \\
+ &  &  & (0.015) &  & (0.011) &  \\
+Female &  &  & -0.052 & *** & -0.083 & *** \\
+ &  &  & (0.009) &  & (0.007) &  \\
+Black &  &  & -0.059 & *** & -0.069 & *** \\
+ &  &  & (0.010) &  & (0.008) &  \\
+Hispanic &  &  & -0.084 & *** & -0.037 & *** \\
+ &  &  & (0.013) &  & (0.009) &  \\
+Age &  &  & 0.038 & *** & 0.031 & *** \\
+ &  &  & (0.001) &  & (0.001) &  \\
+Age squared &  &  & -0.000 & *** & -0.000 & *** \\
+ &  &  & (0.000) &  & (0.000) &  \\
+MSA &  &  & 0.089 & *** & 0.061 & *** \\
+ &  &  & (0.011) &  & (0.012) &  \\
+Central city &  &  & -0.032 & *** & -0.038 & *** \\
+ &  &  & (0.008) &  & (0.007) &  \\
+Observations (N) & 11,116 &  & 18,251 &  & 24,143 &  \\
+R-squared & 0.45 &  & 0.42 &  & 0.39 &  \\
+Within R-squared &  &  & 0.28 &  & 0.20 &  \\
+\bottomrule
+\end{tabular}\par\raggedright
+\begin{minipage}{\linewidth}
+Data: CPS-ORG via IPUMS for the author's columns. D\&K, 1983-2000: Dube and Kaplan's (2010) row-1 published coefficients, as published (not CPS-ORG); D\&K report only outsourced, union, and parttime, so the other term rows and the R-squared are blank for that column (not reported in the paper). The author's R-squared and within R-squared come from a one-off refit of the four pooled base models (janitors/guards x 1983-2000/2001-2025), confirmed to match estimates.csv's outsourced coefficient, SE, and N exactly; D\textbackslash{}\&K do not report within R-squared. Author's Replication: 1983-2000, the author's wage regression. Author's Extension: 2001-2025, estimated on its own data. The vertical rule separates the Author's Replication (1983-2000) from the Author's Extension (2001-2025). Weights: EARNWT. FE: state x year (STATEFIP\textasciicircum{}YEAR), not shown as rows. Clustering: survey month (ym), CRV1 (D\&K's clustering is as published). Reference education: college. Part-time = usual hours under 30. Blank cells: term not in that model or not reported. The MSA central-city-status-unknown and geography-unidentified indicators are in the model but not shown. Stars: * p<.10, ** p<.05, *** p<.01, two-tailed; D\&K stars computed here from the published SE. Table A3 gives the full D\&K vs. author comparison for the outsourced coefficient.\\
+\end{minipage}
+\end{table}
